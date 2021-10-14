@@ -1,0 +1,166 @@
+@import "variables";
+@import "mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+.head {
+  nav {
+    width: 100%;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-color-main;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+    box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.5);
+    .logo-img {
+      width: 90px;
+      display: block;
+      transition: 0.2s;
+      &:active {
+        transform: scale(1.03);
+      }
+    }
+    .sandwich-icon {
+      display: none;
+    }
+    .menu {
+      width: 600px;
+      display: flex;
+      justify-content: space-evenly;
+      .menu-item {
+        color: $font-color-title;
+        font-weight: 600;
+        padding: 20px;
+        position: relative;
+        transition: 0.35s;
+        &:hover {
+          background-color: rgba(128, 128, 128, 0.3);
+        }
+        &:last-child {
+          color: $font-color-decorative;
+        }
+      }
+    }
+  }
+}
+main {
+  margin-top: 60px;
+  .card {
+    display: flex;
+    padding: 20px 70px 0 70px;
+    .card-img-1 {
+      width: 500px;
+      height: 425px;
+      background-image: url("../images/trip-2.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .card-img-2 {
+      width: 500px;
+      height: 425px;
+      background-image: url("../images/trip-1.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .card-info {
+      width: 800px;
+      padding: 50px 80px;
+      .card-title {
+        font-family: serif;
+        font-size: 5em;
+        margin-bottom: 20px;
+        color: $font-color-title;
+      }
+      .card-body {
+        letter-spacing: 2px;
+        line-height: 1.5;
+        font-weight: 700;
+        color: $font-color-text;
+        margin-bottom: 20px;
+      }
+      .card-link {
+        color: $font-color-decorative;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (max-width: $extra-small-device-width) {
+  .head {
+    nav {
+      width: 100%;
+      .sandwich-icon {
+        position: relative;
+        right: 15px;
+        display: inline-block;
+      }
+      .menu {
+        display: none;
+        &.sandwich {
+          text-align: left;
+          display: block;
+          width: 120px;
+          top: 40px;
+          right: 0;
+          position: absolute;
+          background-color: $bg-color-main;
+          box-shadow: 1px 1px 10px rgba(128, 128, 128, 0.5);
+          border: 1px solid rgba(128, 128, 128, 0.5);
+        }
+        .menu-item {
+          display: block;
+          padding: 0 10px;
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  main {
+    height: 170vh;
+    margin-top: 60px;
+    .card {
+      padding: 10px;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .card-img-1,
+      .card-img-2 {
+        width: 300px;
+        height: 250px;
+      }
+      .card-info {
+        padding: 10px;
+        width: 700px;
+        .card-title {
+          font-family: serif;
+          font-size: 2em;
+          margin-bottom: 20px;
+          color: $font-color-title;
+        }
+        .card-body {
+          letter-spacing: 1px;
+          line-height: 1.3;
+          font-weight: 600;
+          color: $font-color-text;
+          margin-bottom: 20px;
+        }
+        .card-link {
+          color: $font-color-decorative;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
